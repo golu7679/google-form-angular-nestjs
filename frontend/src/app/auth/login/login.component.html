@@ -1,0 +1,15 @@
+<!-- Content over app content -->
+<div class="login">
+    <div class=" container example tui-space_right-2 tui-space_left-2">
+        <form [formGroup]="loginForm">
+            <tui-input formControlName="email">
+                Type an email
+                <input tuiTextfield type="email" />
+            </tui-input>
+            <tui-input-password formControlName="password" class="tui-space_top-2">
+                Type a password
+                <input tuiTextfield placeholder="Make it secure!" />
+            </tui-input-password>
+        </form>
+    </div>
+</div>
