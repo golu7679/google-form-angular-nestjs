@@ -17,6 +17,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "4mb",
+              "maximumError": "5mb"
+            }
+            ],
+            "allowedCommonJsDependencies": ["text-mask-core", "dompurify"],
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -24,7 +32,7 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -38,7 +46,7 @@
               "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
               "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
               "node_modules/@taiga-ui/styles/taiga-ui-global.less",
-              "src/styles.scss"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -95,13 +103,13 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.less"
             ],
             "scripts": []
           }
