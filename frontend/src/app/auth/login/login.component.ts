@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { ALL_TAIGA_UI_MODULES } from 'src/app/all-taiga.modules';
 
 @Component({
@@ -9,7 +10,7 @@ import { ALL_TAIGA_UI_MODULES } from 'src/app/all-taiga.modules';
   styleUrls: ['./login.component.less'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ReactiveFormsModule, ALL_TAIGA_UI_MODULES]
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, ALL_TAIGA_UI_MODULES]
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
