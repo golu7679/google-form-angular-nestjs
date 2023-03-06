@@ -1,17 +1,25 @@
 <div class="login">
     <div class=" container t-shadow-container tui-space_right-2 tui-space_left-2">
         <h3 class="tui-form__header tui-form__header_margin-top_none text-center">Login</h3>
-        <form [formGroup]="loginForm">
-            <tui-input formControlName="email">
-                Type an email
-                <input tuiTextfield type="email" />
-            </tui-input>
-            <tui-input-password formControlName="password" class="tui-space_top-2">
-                Type a password
-                <input tuiTextfield placeholder="Make it secure!" />
-            </tui-input-password>
+        <form [formGroup]="loginForm" (submit)="loginFormSubmit()">
+            <div class="tui-form__row">
+                <tui-input tuiTextfieldExampleText="example@mail.com" formControlName="email">
+                    Email
+                    <span class="tui-required"></span>
+                </tui-input>
+                <tui-error formControlName="email" [error]="[] | tuiFieldError | async"></tui-error>
+            </div>
+            <div class="tui-form__row">
+                <tui-input-password formControlName="password" class="tui-space_top-2">
+                    Password
+                    <input tuiTextfield placeholder="Make it secure!" />
+                    <span class="tui-required"></span>
+                </tui-input-password>
+                <tui-error formControlName="password" [error]="[] | tuiFieldError | async"></tui-error>
+            </div>
             <div class="tui-form__buttons">
-                <button tuiButton type="submit" appearance="primary" class="tui-space_right-3 tui-space_bottom-3 w-100">
+                <button tuiButton type="submit" appearance="primary"
+                    class="tui-space_right-3 tui-space_bottom-3 w-100 primary-button">
                     Login
                 </button>
             </div>
