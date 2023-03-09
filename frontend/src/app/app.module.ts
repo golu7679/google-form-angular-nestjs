@@ -8,7 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ALL_TAIGA_UI_MODULES } from './all-taiga.modules';
-
+import { RouterModule, } from "@angular/router";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http"
+import { NetworkInterceptor } from "./interceptor/network.interceptor";
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +20,15 @@ import { ALL_TAIGA_UI_MODULES } from './all-taiga.modules';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ALL_TAIGA_UI_MODULES
+    RouterModule,
+    HttpClientModule,
+    ALL_TAIGA_UI_MODULES,
+
   ],
-  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
+  providers: [
+    { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },
+    { provide: HTTP_INTERCEPTORS, useClass: NetworkInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

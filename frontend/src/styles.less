@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@taiga-ui/core/styles/taiga-ui-local.less';
+
+@import './assets/less/utilities.less';
+
+*{
+    --tui-autofill: white;
+}
+
+.t-shadow-container {
+    font: var(--tui-font-text-m);
+    .shadow(1);
+    padding: 30px;
+    background-color: var(--tui-base-01);
+    border-radius: var(--tui-radius-m);
+}

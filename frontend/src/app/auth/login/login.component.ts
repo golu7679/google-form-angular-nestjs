@@ -16,7 +16,9 @@ import { AlertService } from 'src/app/services/alert/alert.service';
   providers: [validationConfig],
 })
 export class LoginComponent implements OnInit {
+
   loginForm: FormGroup;
+  formSubmitted = false;
 
   constructor(private formBuilder: FormBuilder, private alertService: AlertService) {
     this.loginForm = this.formBuilder.group({
@@ -31,5 +33,13 @@ export class LoginComponent implements OnInit {
 
   loginFormSubmit() {
     this.loginForm.markAllAsTouched();
+    if (this.loginForm.invalid) return;
+    this.formSubmitted = true;
+    this.loginForm.disable();
+    const { email, password } = this.loginForm.getRawValue();
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('password', password);
+    
   }
 }
