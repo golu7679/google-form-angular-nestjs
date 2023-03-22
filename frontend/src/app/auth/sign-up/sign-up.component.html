@@ -1,79 +1,64 @@
-<!-- <div class="login">
+<div class="login">
     <div class=" container t-shadow-container tui-space_right-2 tui-space_left-2">
         <h3 class="tui-form__header tui-form__header_margin-top_none text-center">Sign Up</h3>
-        <form [formGroup]="singUp">
-            <div class="tui-container">
+        <form [formGroup]="singUp" (submit)="submitSignUpForm()">
 
-                <form>
-                    <div class="tui-row tui-row_sme">
-                        <div class="tui-col_8">
-
-                            <div class="tui-form__row tui-form__row_multi-fields">
-                                <div class="tui-form__multi-field">
-                                    <tui-input-password>Input
-                                        password</tui-input-password>
-                                </div>
-                                <div class="tui-form__multi-field">
-                                    <tui-input-number>
-                                        Input money
-                                    </tui-input-number>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
+            <div class="tui-form__row tui-form__row_multi-fields">
+                <div class="tui-form__multi-field">
+                    <tui-input formControlName="first_name">
+                        First name
+                        <span class="tui-required"></span>
+                    </tui-input>
+                    <tui-error formControlName="first_name" [error]="[] | tuiFieldError | async"></tui-error>
+                </div>
+                <div class="tui-form__multi-field">
+                    <tui-input formControlName="last_name">
+                        Last name
+                        <span class="tui-required"></span>
+                    </tui-input>
+                    <tui-error formControlName="last_name" [error]="[] | tuiFieldError | async"></tui-error>
+                </div>
             </div>
-            <tui-input formControlName="email">
-                Type an email
-                <input tuiTextfield type="email" />
-            </tui-input>
-            <tui-input-password formControlName="password" class="tui-space_top-2">
-                Type a password
-                <input tuiTextfield placeholder="Make it secure!" />
-            </tui-input-password>
+
+            <div class="tui-form__row">
+                <tui-input tuiTextfieldExampleText="example@mail.com" formControlName="email">
+                    Email
+                    <span class="tui-required"></span>
+                </tui-input>
+                <tui-error formControlName="email" [error]="[] | tuiFieldError | async"></tui-error>
+            </div>
+            <div class="tui-form__row">
+                <tui-input-password formControlName="password" class="tui-space_top-2">
+                    Password
+                    <input tuiTextfield placeholder="Make it secure!" />
+                    <span class="tui-required"></span>
+                </tui-input-password>
+                <tui-error formControlName="password" [error]="[] | tuiFieldError | async"></tui-error>
+                <div class="tui-form__row">
+                    <span>Password criteria</span>
+                    <tui-tooltip
+                        content="Password must contain at least eight characters, at least one number and both lower and uppercase letters and special characters"
+                        direction="top"></tui-tooltip>
+
+                </div>
+            </div>
             <div class="tui-form__buttons">
-                <button tuiButton type="submit" appearance="primary" class="tui-space_right-3 tui-space_bottom-3 w-100">
-                    Login
-                </button>
+                <tui-loader [showLoader]="formSubmitted" [inheritColor]="true" class="w-100" [overlay]="true">
+                    <button tuiButton type="submit" appearance="primary"
+                        class="tui-space_right-3 tui-space_bottom-3 w-100  primary-button">
+                        Sign Up
+                    </button>
+                </tui-loader>
             </div>
         </form>
 
         <br>
 
-        <div class="d-flex justify-content-between">
-            <a tuiLink routerLink="/signup">
-                Sign Up
-            </a>
-            <a tuiLink routerLink="/forget-password">
-                Forget Password
+        <div class="d-flex justify-content-center">
+            <a tuiLink routerLink="/login">
+                Login
             </a>
         </div>
 
     </div>
-</div> -->
-
-
-<div class="tui-container">
-
-    <form>
-        <div class="tui-row tui-row_sme">
-            <div class="tui-col">
-
-                <div class="tui-form__row tui-form__row_multi-fields">
-                    <div class="tui-form__multi-field">
-                        <tui-input-password>
-                            Input password
-                        </tui-input-password>
-                    </div>
-                    <div class="tui-form__multi-field">
-                        <tui-input-number>
-                            Input money
-                        </tui-input-number>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </form>
 </div>

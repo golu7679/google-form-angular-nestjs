@@ -11,10 +11,11 @@ import { ALL_TAIGA_UI_MODULES } from './all-taiga.modules';
 import { RouterModule, } from "@angular/router";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http"
 import { NetworkInterceptor } from "./interceptor/network.interceptor";
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

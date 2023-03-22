@@ -40,6 +40,6 @@ export class LoginComponent implements OnInit {
     const formData = new FormData();
     formData.append('email', email);
     formData.append('password', password);
-    
+
   }
 }
