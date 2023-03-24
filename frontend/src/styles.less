@@ -14,3 +14,21 @@
     background-color: var(--tui-base-01);
     border-radius: var(--tui-radius-m);
 }
+
+.container-shadow{
+    .shadow(1);
+}
+
+.input-container{
+   
+    box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.1);
+    border-radius: var(--tui-radius-m);
+    border: solid transparent !important;
+    border-width: 0 var(--border-end, 0) 0 var(--border-start, 0) !important;
+    border-inline-start-width: var(--border-start, 0) !important;
+    border-inline-end-width: var(--border-end, 0) !important;
+    .shadow(1);
+    &:focus{
+        outline: none !important    ;
+    }
+}

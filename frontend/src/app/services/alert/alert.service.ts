@@ -18,7 +18,7 @@ export class AlertService {
       .subscribe();
   }
 
-  warning(message: string, autoClose: boolean, label: string = '') {
+  warning(message: string, autoClose: boolean = true, label: string = '') {
     this.alertService
       .open(message, {
         label,
@@ -28,7 +28,7 @@ export class AlertService {
       .subscribe();
   }
 
-  error(message: string, autoClose: boolean, label: string = '') {
+  error(message: string, autoClose: boolean = true, label: string = '') {
     this.alertService
       .open(message, {
         label,
@@ -37,7 +37,7 @@ export class AlertService {
       })
       .subscribe();
   }
-  info(message: string, autoClose: boolean, label: string = '') {
+  info(message: string, autoClose: boolean = true, label: string = '') {
     this.alertService
       .open(message, {
         label,

@@ -16,6 +16,10 @@ const routes: Routes = [
     loadComponent: () => import("./auth/sign-up/sign-up.component").then(m => m.SignUpComponent)
   },
   {
+    path: 'forget-password',
+    loadComponent: () => import("./auth/forget-password/forget-password.component").then(m => m.ForgetPasswordComponent)
+  },
+  {
     path: '**',
     redirectTo: '/'
   }

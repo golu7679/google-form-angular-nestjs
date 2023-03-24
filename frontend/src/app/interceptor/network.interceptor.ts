@@ -22,7 +22,7 @@ export class NetworkInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const apiRequest = request.clone({
-      url: environment.apiUrl,
+      url: environment.apiUrl + request.url,
       headers: this.getAuthorizationHeader
     });
     return next.handle(apiRequest).pipe(
@@ -34,7 +34,7 @@ export class NetworkInterceptor implements HttpInterceptor {
           };
         }
         if (error.status === 401) {
-          
+
         }
         return throwError(error);
       })
